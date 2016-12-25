@@ -8,15 +8,25 @@
   <link rel="dns-prefetch" href="http://inerdstack.com">
   <title>Hello</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="There is a will,there is a way.">
-<meta property="og:type" content="website">
+  <meta name="description" content="js�߼�ʮ��֪ʶ����ǩ���ո��ָ����� ֪ʶ�ܽ�
+
+1.�������巽ʽ��ͬ��Ԥ�����Ľ����᲻ͬ������var,(2)�е�fun������Ԥ����ʱ������Ϊһ����������������������ʼֵ��undefind;��������Ϊһ�����������е��á�
+(1)fun();       //������123">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hello">
-<meta property="og:url" content="http://inerdstack.com/index.html">
+<meta property="og:url" content="http://inerdstack.com/2016/12/25/my-first-blog/index.html">
 <meta property="og:site_name" content="Hello">
-<meta property="og:description" content="There is a will,there is a way.">
+<meta property="og:description" content="js�߼�ʮ��֪ʶ����ǩ���ո��ָ����� ֪ʶ�ܽ�
+
+1.�������巽ʽ��ͬ��Ԥ�����Ľ����᲻ͬ������var,(2)�е�fun������Ԥ����ʱ������Ϊһ����������������������ʼֵ��undefind;��������Ϊһ�����������е��á�
+(1)fun();       //������123">
+<meta property="og:updated_time" content="2016-12-25T13:07:27.046Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hello">
-<meta name="twitter:description" content="There is a will,there is a way.">
+<meta name="twitter:description" content="js�߼�ʮ��֪ʶ����ǩ���ո��ָ����� ֪ʶ�ܽ�
+
+1.�������巽ʽ��ͬ��Ԥ�����Ľ����᲻ͬ������var,(2)�е�fun������Ԥ����ʱ������Ϊһ����������������������ʼֵ��undefind;��������Ϊһ�����������е��á�
+(1)fun();       //������123">
   
     <link rel="alternative" href="/atom.xml" title="Hello" type="application/atom+xml">
   
@@ -146,9 +156,7 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-my-first-blog" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-my-first-blog" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
@@ -164,63 +172,150 @@
      var fun = function(){
   alert(��123��);
  }
+</code></pre><a id="more"></a>
+<p>2.undefind��is not defind<br>��var�����ı���a������Ԥ��������ʼֵ��undefind,��δ������bֱ��ʹ�ã����ڳ������󣬻ᱨ����</p>
+<pre><code>alert(a);   //����Ϊundefind
+ var a=4;  
+alert(b);   //����Ϊ���� is not defind.
+</code></pre><p>3.Ԥ�����ᰴ��<script>��ǩ�ֿ�����</p>
+<script>��ǩ�൱�ڻ���Ԥ��������һ���ֽ�,��һ��<script>��ǩ��Ԥ�����Ľ�����������һ��<script>��ǩ��ʹ�ã�����alert(a)��showMsg()���ᱨ��������<script>��ǩ������Ӱ������ִ�к��Ľ�����
+
+<script>
+    alert(a);    //����Ϊ����
+    showMsg();   //����Ϊ����
+</script>
+<script>
+alert(a);    //undefind
+    var a=4;
+    funciton showMsg(){
+         alert(123);
+    }
+</script>
+<script>
+    alert(a);  //����ִ�У�����Ϊ4
+</script>
+
+</p><p>5.�����Ķ�������Ԥ��������������<br>�;ֲ��������ƣ������ں����ڲ��ı�����Ԥ�����Ľ���Ҳֻ���ں����ڲ�ʹ�ã�������������һ���Լ�ȫ����ʹ�ã�������ȫ���е�alert(num)�ᱨ����</p>
+<pre><code>function show(){
+    alert(num);  //����Ϊundefind
+    var num = 4;
+}
+show();
+alert(num);  //����Ϊ����
+</code></pre><p>6.�����������ֺͺ�����������ͬʱ��Ԥ�����Ľ�����<br>Ԥ����ʱ�������ĳ�ʼֵ��undefind�������ĳ�ʼֵ�Ǻ����屾����������������ͬʱ��Ԥ����Ҳ�����ָ������������Ե�һ��console.log(fun)�������Ǻ����屾����<br>���и�ֵ=��++��–�ȣ����Գ�ʼֵ���иı䡣�����ڵڶ���console.log(fun)�������� var fun = 2; �ı���fun����ֵ��</p>
+<pre><code>console.log(fun);     //���������屾��
+var fun = 2;
+function fun(){
+    alert(&quot;����&quot;);
+}
+console.log(fun);      //����2
+</code></pre><p>7.Ԥ�������Ե�<br>û��var����������Ϊ�Ƕ�һ��������ֵ���иı䣬��������Ԥ���������Բ�����x ����Ԥ������console.log(x) ������</p>
+<pre><code>console.log(x);  //����
+x = 3;
+</code></pre><p>8.��������<br>����������ֻ��������һ����������Ѱ�ұ�����������������һ������;���ڱ���������һ���ҵ���������ʱ����ֹͣ���ң�����һ��һ�����ϲ��ң���Ȼû���ҵ�����������˵������δ���壬���򱨴���is not defind</p>
+<pre><code>var x = 3;
+function f1(){
+    var y = 4;
+    function f2(){
+        var z = 5;
+        console.log(x + y + z);  //13
+    }
+    console.log(x + y);  //7
+    f2();
+    console.log(x + y + z);  //z is not defind
+}
+f1();
+console.log(x + y);  //������y is not defind
+f2();  //������is not defind
+</code></pre><p>9.��������ȷ����ʱ��<br>���������ڶ�����ʱ��ȷ���ģ������ǵ������е�ʱ����������f�����з��ص����������ڵ��������ڶ�����ʱ�����Ѿ�ȷ��Ϊ�����Լ� –&gt; f ������ –&gt; ȫ�����������������󷵻ص�b��ֵ�ǡ�bbb����</p>
+<pre><code>function f(){
+    var b = &quot;bbb&quot;;
+    return function(){  
+        return b;
+    }
+}
+var out = f();  // out ��ֵ��f���ص���������
+var result = out();  //result ��ֵ��b
+console.log(result);
+</code></pre><p>10.ES6<br>(1)��ES6��letʵ���˿鼶�����򣬶����ı���x ֻ����{}��ʹ�á�</p>
+<pre><code>{
+let x = 1;
+var y = 2;
+}
+console.log(x);   //����
+console.log(y);   //����2
+</code></pre><p>(2)let������������<br>let�����ı�������������������������ʹ�á�</p>
+<pre><code>alert(a);  //������a is not defind
+let a = 2;
+</code></pre><p>(3)let��Ϊÿһ��ѭ�����Ƕ����Ŀ�<br>  ��let������iֻ�ڵ�ǰһ����Ч��ÿһ�ֵ�i���Ƕ�����</p>
+<pre><code>var a = [];
+for(let i = 0 ; i &lt; 3 ; i++){
+    a[i] = function(){
+        console.log(i);
+    }
+}
+a[0]();    //����0
+a[1]();    //����1
+</code></pre><p>(4)let�����ظ�����<br>var�����ظ��������������ǣ�let�ظ������ᱨ���������ϸ�Ҫ����ֻ������һ�Ρ�</p>
+<pre><code>{
+    let w = &quot;aa&quot;;
+    let w = &quot;bb&quot;;
+    alert(w);   //���� 
+}
+</code></pre><p>(5)const<br>const�������൱�ڳ�������ֵ���ܸı䣬ֻ���������ڶ�a�����޸�ʱ�ᱨ����</p>
+<pre><code>const a = 2;
+console.log(a);
+a = 3;      //����
+console.log(a);
+</code></pre><p>11.ʹ�ù��캯��+ԭ�ͷ�ʽ�����Ķ��󣬷��������Ի򷽷���˳���ǣ���1�������Լ��Ĺ��캯��Ѱ�ң���2���Ҳ���ȥԭ�Ϳռ�</p>
+<pre><code>function Dog(name,color){
+    this.name = name;
+}
+Dog.prototype.name = &quot;¶��&quot;;
+Dog.prototype.color = &quot;black&quot;;
+var dog = new Dog(&quot;̩��&quot;,&quot;gray&quot;);
+console.log(dog.name);  //̩��
+console.log(dog.color);   //black
+</code></pre><p>12.�̳кͶ�̬<br>���� &gt; ����<br>call()����1���°󶨵�this����<br>    ����1֮��������Ϊԭ���ĺ������βζ�Ӧ��ʵ��<br>    call�������ı�ĳ��������thisָ����</p>
+<pre><code>function Animal(n,s){
+           this.type = n;
+           this.sex = s;
+   }
+   Animal.prototype.speak = function(){    //����
+       alert(this.type);
+   }
+   function Bird(t,s,w){        
+       Animal.call(this,t,s);       
+   this.fly = w;            
+   } 
+   Bird.prototype.speak = function(){   //����
+       alert(&quot;����bird�Լ�������speak����&quot;);
+   }
+   bird.speak();  // ���������Լ������ķ���
 </code></pre>
-        
-          <a class="article-more-a" href="/2016/12/25/my-first-blog/#more">more >></a>
-        
       
 
       
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/25/my-first-blog/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-
-
-
-
-
-
-
-  
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/12/23/hello-world/">Hello World</a>
-    </h1>
-  
-
-        <a href="/2016/12/23/hello-world/" class="archive-article-date">
-  	<time datetime="2016-12-23T10:15:05.776Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-23</time>
-</a>
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.<br>
-        
-          <a class="article-more-a" href="/2016/12/23/hello-world/#more">more >></a>
-        
-      
-
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -229,26 +324,81 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2016/12/23/hello-world/">展开全文 >></a>
-        </p>
-      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://inerdstack.com/2016/12/25/my-first-blog/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
 
-
-
-
-
-
-
-
+  
+<nav id="article-nav">
   
   
+    <a href="/2016/12/23/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+
+
 
 
           </div>
@@ -270,8 +420,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
